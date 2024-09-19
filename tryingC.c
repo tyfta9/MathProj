@@ -1,39 +1,32 @@
 #include <stdio.h>
 #include <string.h>
 
-int GetNumber();
-char *ReadString();
-int GetFirstNum();
+#define MAX 50
+
+// Function prototypes
+int GetNumber(char *num);
+// char *ReadString(char *string, char *promt);
 
 int main(int argc, char *argv[])
 {
-  char promt[] = {"Num:"};
+  char promt[] = {"Nummber:"};
+  char numArr[MAX];
+  scanf(promt, numArr);
+  printf("%s", numArr);
+  int num = GetNumber(numArr);
 
-  GetFirstNum(promt);
-
-  return -1;
+  return 0;
 }
 
-int GetNumber(char num[])
+int GetNumber(char *num)
 {
+  int result = 0;
   // for (int i = 0;; i++)
   // {
   //   if (!num[i])
   //     break;
 
-  //   printf("%c", num[i]);
+  //   printf("%c", (num[i] - '0'));
   // }
-  return 0;
-}
-
-char *ReadString(char promt[])
-{
-  char num[100];
-  scanf(promt, num);
-  return *num;
-}
-
-int GetFirstNum(char promt[])
-{
-  return GetNumber(ReadString(promt));
+  return result;
 }
