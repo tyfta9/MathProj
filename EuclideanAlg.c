@@ -1,19 +1,29 @@
 #include <stdio.h>
 
 // Function prototypes
-int GetGCD(int num1, int num2);
-int GetNummber(char *promt);
+unsigned int GetGCD(unsigned int num1, unsigned int num2);
+unsigned int GetNumber(char *prom);
 
 int main(int argc, char *argv[])
 {
   printf("\nThis program finds GCD & LCM\n\n");
 
+  //
   char key;
 
-  int num1 = GetNummber("Write first integer: ");
-  int num2 = GetNummber("Write second integer: ");
+  // Getting input from the user
+  unsigned int num1 = GetNumber("Write first integer: ");
+  unsigned int num2 = GetNumber("Write second integer: ");
 
-  int gcd = GetGCD(num1, num2);
+  // Calculating Greatest Common Deviser
+  // Smallest number goes first
+  unsigned int gcd = 0;
+  if (num1 < num2)
+    gcd = GetGCD(num1, num2);
+  else
+    gcd = GetGCD(num2, num1);
+
+  // Calculating Lowest Common Multiple
   int lcm = num1 * num2 / gcd;
 
   printf("\nYour GCD is: %d\n", gcd);
@@ -26,11 +36,11 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-int GetNummber(char *promt)
+unsigned int GetNumber(char *prom)
 {
-  int num = 0;
+  unsigned int num = 0;
 
-  printf("%s", promt);
+  printf("%d", prom);
   scanf("%d", &num);
 
   return num;
