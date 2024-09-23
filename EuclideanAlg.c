@@ -3,15 +3,15 @@
 
 // Function prototypes
 unsigned int GetGCD(unsigned int num1, unsigned int num2);
-unsigned int GetNumber(char *prom);
+unsigned int GetNumber(char *prompt);
 
 int main(int argc, char *argv[])
 {
   printf("\nThis program finds GCD & LCM\n\n");
 
   // Getting input from the user
-  unsigned long num1 = GetNumber("Write first integer: ");
-  unsigned long num2 = GetNumber("Write second integer: ");
+  unsigned long num1 = GetNumber("Write first number: ");
+  unsigned long num2 = GetNumber("Write second number: ");
 
   // Calculating Greatest Common Divisor (GCD)
   // Smaller number goes first
@@ -37,13 +37,13 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-unsigned int GetNumber(char *prom)
+unsigned int GetNumber(char *prompt)
 {
   unsigned int num = 0;
 
   // Prompt user for input
-  printf("%s", prom); // Use %s to print string
-  scanf("%u", &num);  // Use %u for unsigned int
+  printf("%s", prompt); // Use %s to print string
+  scanf("%u", &num);    // Use %u for unsigned int
 
   return num;
 }
